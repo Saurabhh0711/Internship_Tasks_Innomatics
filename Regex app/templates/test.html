@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Regex Matcher - Results</title>
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+    <i><h1>The Matched Strings:-</h1></i>
+    <h1>Matches:</h1>
+    <ul style="list-style-type: lower-roman;">
+      {% for match in matches %}
+        <li>{{ match }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
