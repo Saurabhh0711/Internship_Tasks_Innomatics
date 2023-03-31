@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %} All_urls {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    {% if urls|length == 0 %}
+    <div class="alert alert-info">
+        Nothing to see
+    </div>
+</div>
+
+{% else %}
+<div class="container">
+  <h2><i>History</i></h2><hr>
+  <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Long Url</th>
+            <th scope="col">Short url</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for url in urls %}
+        <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td><p id="noon">{{url.short_url}}</p></td>
+            <td>
+                <a href="/delete/{{url.id}}" class="btn btn-outline-danger btn-sm ms-1" role="button">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    
+  </table>
+  {% endif %}
+</div>
+</div>
+
+{% endblock content %}
